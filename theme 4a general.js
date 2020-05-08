@@ -15,7 +15,8 @@ $(function() {
 	handleWelcome();
 	handleByLines();
 	handleTruncateMonths();
-	handleIdeations();
+    handleIdeations();
+    handleACLIcons();
 });
 
 function handlePageTitle() {
@@ -85,4 +86,32 @@ function handleIdeations() {
 
 		$(description).insertAfter(title);
 	});
+}
+
+function handleACLIcons() {
+    $('.recent-activity ul li').each(function () {
+        var self = $(this),
+            label = $(self).find('.title-row > .col-md-3 > .label-default'),
+            labelText = $(label).text();
+
+        labelText = $.trim(labelText);
+
+        switch (labelText) {
+            case 'Announcement':
+                $(label).addClass('announcement');
+                break;
+            case 'Discussion':
+                $(label).addClass('discussion');
+                break;
+            case 'Blog Entry':
+                $(label).addClass('blog');
+                break;
+            case 'Event':
+                $(label).addClass('event');
+                break;
+            default: 
+                $(label).addClass('default');
+                break;
+        }
+    });
 }

@@ -766,46 +766,34 @@ td.ProfilePic>a>img {
     margin-left: 3px;
 }
 
-/* .recent-activity span.label::before {
-	position: absolute;
-	left: 12px;
-	right: 0;
-	top: 6px;
-	z-index: 2;
-	content: "\f15c";
-}
-
-.recent-activity span.label::after {
-	content: '';
-	display: block;
-	background-color: #ffa234;
-	opacity: 0.4;
-	border-radius: 150px;
-	margin: auto;
-	z-index: 1;
-} */
-
 /* icons */
 
 .recent-activity .title-row > .col-md-3.pull-right .label-default::before {
     font-family: "Font Awesome 5 Pro";
-    color: #372C75;
     font-size: 24px;
     line-height: 1.1;
     display: block;
     content: '';
+    position: absolute;
+    z-index: 10;
+    top: 9px;
+    left: 6px;
+    font-weight: 300;
 }
-.recent-activity .title-row > .col-md-3.pull-right .label-default[text*="Announcement"]::before {
+.recent-activity .title-row > .col-md-3.pull-right .label-default.announcement::before {
     content: '\f675';
 }
-.recent-activity .title-row > .col-md-3.pull-right .label-default[text*="Discussion"]::before {
+.recent-activity .title-row > .col-md-3.pull-right .label-default.discussion::before {
     content: '\f086';
 }
-.recent-activity .title-row > .col-md-3.pull-right .label-default[text*="Blog"]::before {
+.recent-activity .title-row > .col-md-3.pull-right .label-default.blog::before {
     content: '\f109';
 }
-.recent-activity .title-row > .col-md-3.pull-right .label-default[text*="Event"]::before {
+.recent-activity .title-row > .col-md-3.pull-right .label-default.event::before {
     content: '\f073';
+}
+.recent-activity .title-row > .col-md-3.pull-right .label-default.default::before {
+    content: '\f15c';
 }
 .recent-activity .title-row > .col-md-3.pull-right .label-default {
     background: transparent;
@@ -813,7 +801,6 @@ td.ProfilePic>a>img {
     position: relative;
 }
 .recent-activity .title-row > .col-md-3.pull-right .label-default::after {
-    background: #FFA234;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -1284,4 +1271,12 @@ td.ProfilePic>a>img {
 
 .footer-attribution {
     text-align: right;
+}
+
+/************ COLOR PICKER ************/
+.recent-activity .title-row > .col-md-3.pull-right .label-default::before {
+    color: [PrimaryColor];
+}
+.recent-activity .title-row > .col-md-3.pull-right .label-default::after {
+    background-color: [SecondaryColor];
 }
